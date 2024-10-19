@@ -18,12 +18,8 @@ if phone_number:
     res = r.post('https://api.digikala.com/v1/user/authenticate/', headers=headers, data=json.dumps(data))
 
     if res.json().get("status") == 200:
-        print("SMS has been sent.")
+        print("[+] SMS has been sent.")
+        otp_code = input("Enter OTP code: ")
+        
     else:
-        print(res.text)
-
-    # print(f'Status Code: {response.status_code}')
-    # print('Response Body:', response.text)
-
-
-
+        print(f'[-] Error: {res.text}')
