@@ -8,8 +8,9 @@ file_name = sys.argv[1]
 if os.path.exists(file_name):
     with open(file_name, 'r') as f:
         content = f.read()
-        for f in content.split('\n'):
-            print(md5(f))
 else:
-    print('The file does not exist!')
+    print("The file does not exist!")
     sys.exit()
+
+for f in content.split('\n'):
+    print(md5(f))
